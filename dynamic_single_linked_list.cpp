@@ -247,75 +247,161 @@ void printSingleLinkedList() {
     cout << "Judul buku : " << cur->judul << endl;
     cout << "Pengarang buku : " << cur->pengarang << endl;
     cout << "Tahun terbit buku : " << cur->tahunTerbit << endl;
+    cout << "===============================" << endl;
 
     cur = cur->next;
   }
+
+  cout << "\n" << endl;
+}
+
+/**
+ * @brief Mengatur form data menggunakan pointer agar data dapat diubah
+ * 
+ * @param judul 
+ * @param pengarang 
+ * @param tahunTerbit
+ * 
+ * @return void
+ */
+void handleDataForm(string *judul, string *pengarang, int *tahunTerbit) {
+  cout << "Masukan judul buku : ";
+  cin >> *judul;
+
+  cout << "Masukan pengarang buku : ";
+  cin >> *pengarang;
+
+  cout << "Masukan tahun terbit buku : ";
+  cin >> *tahunTerbit;
 }
 
 int main() {
-  initSingleLinkedList("Kata", "dia", 2018);
+  int pilihan;
+  bool isRunning = true;
 
-  printSingleLinkedList();
+  do {
+    pilihan = 0;
+    cout << "Menu Single Linked List" << endl;
+    cout << "1. Inisiasi Single Linked List" << endl;
+    cout << "2. Menambahkan data" << endl;
+    cout << "3. Menghapus data" << endl;
+    cout << "4. Mengubah data" << endl;
+    cout << "5. Menampilkan data" << endl;
+    cout << "6. Keluar" << endl;
+    cout << "===============================" << endl;
+    cout << "Masukan pilihan : ";
+    cin >> pilihan;
 
-  cout << "\n" << endl;
+    string judul, pengarang;
+    int tahunTerbit, posisi;
 
-  addHead("Dia adalah kakakku", "Gak paham", 2009);
+    switch (pilihan) {
+      case 1:
+        handleDataForm(&judul, &pengarang, &tahunTerbit);
+        initSingleLinkedList(judul, pengarang, tahunTerbit);
+        break;
+      case 2:
+        cout << "Menu menambahkan data" << endl;
+        cout << "1. Menambahkan data pada head" << endl;
+        cout << "2. Menambahkan data pada tail" << endl;
+        cout << "3. Menambahkan data pada tengah" << endl;
+        cout << "===============================" << endl;
+        cout << "Masukan pilihan : ";
+        cin >> pilihan;
 
-  printSingleLinkedList();
+        switch (pilihan) {
+          case 1:
+            handleDataForm(&judul, &pengarang, &tahunTerbit);
+            addHead(judul, pengarang, tahunTerbit);
+            break;
+          case 2:
+            handleDataForm(&judul, &pengarang, &tahunTerbit);
+            addTail(judul, pengarang, tahunTerbit);
+            break;
+          case 3:
+            handleDataForm(&judul, &pengarang, &tahunTerbit);
 
-  cout << "\n" << endl;
+            cout << "Masukan posisi buku : ";
+            cin >> posisi;
 
-  addTail("Aroma Karsa", "dee", 2018);
+            addMiddle(judul, pengarang, tahunTerbit, posisi);
+            break;
+          default:
+            cout << "Pilihan tidak tersedia" << endl;
+            break;
+        }
+        break;
+      case 3:
+        cout << "Menu menghapus data" << endl;
+        cout << "1. Menghapus data pada head" << endl;
+        cout << "2. Menghapus data pada tail" << endl;
+        cout << "3. Menghapus data pada tengah" << endl;
+        cout << "===============================" << endl;
+        cout << "Masukan pilihan : ";
+        cin >> pilihan;
 
-  printSingleLinkedList();
+        switch (pilihan) {
+          case 1:
+            removeHead();
+            break;
+          case 2:
+            removeTail();
+            break;
+          case 3:
+            cout << "Masukan posisi buku : ";
+            cin >> posisi;
 
-  cout << "\n" << endl;
+            removeMiddle(posisi);
+            break;
+          default:
+            cout << "Pilihan tidak tersedia" << endl;
+            break;
+        }
+        break;
+      case 4:
+        cout << "Menu mengubah data" << endl;
+        cout << "1. Mengubah data pada head" << endl;
+        cout << "2. Mengubah data pada tail" << endl;
+        cout << "3. Mengubah data pada tengah" << endl;
+        cout << "===============================" << endl;
+        cout << "Masukan pilihan : ";
+        cin >> pilihan;
 
-  removeHead();
+        switch (pilihan) {
+          case 1:
+            handleDataForm(&judul, &pengarang, &tahunTerbit);
+            changeHead(judul, pengarang, tahunTerbit);
+            break;
+          case 2:
+            handleDataForm(&judul, &pengarang, &tahunTerbit);
+            changeTail(judul, pengarang, tahunTerbit);
+            break;
+          case 3:
+            handleDataForm(&judul, &pengarang, &tahunTerbit);
 
-  printSingleLinkedList();
+            cout << "Masukan posisi buku : ";
+            cin >> posisi;
 
-  cout << "\n" << endl;
+            changeMiddle(judul, pengarang, tahunTerbit, posisi);
+            break;
+          default:
+            cout << "Pilihan tidak tersedia" << endl;
+            break;
+        }
+        break;
+      case 5:
+        printSingleLinkedList();
+        break;
+      case 6:
+        isRunning = false;
+        break;
+      default:
+        cout << "Pilihan tidak tersedia" << endl;
+        break;
+    }
+  } while (isRunning);
 
-  addTail("11.11", "fiera", 2018);
+  cout << "Program selesai" << endl;
 
-  printSingleLinkedList();
-
-  cout << "\n" << endl;
-
-  removeTail();
-
-  printSingleLinkedList();
-
-  cout << "\n" << endl;
-
-  changeHead("Berhenti", "Gia", 2018);
-
-  printSingleLinkedList();
-
-  cout << "\n" << endl;
-
-  addMiddle("Manusia", "Toer", 2005, 2);
-
-  printSingleLinkedList();
-
-  cout << "\n" << endl;
-
-  addMiddle("Menara", "Ahmad", 2009, 2);
-
-  printSingleLinkedList();
-
-  cout << "\n" << endl;
-
-  removeMiddle(5);
-
-  printSingleLinkedList();
-
-  cout << "\n" << endl;
-
-  changeMiddle("sang", "Andrea", 2006, 2);
-
-  printSingleLinkedList();
-
-  cout << "\n" << endl;
+  return 0;
 }
