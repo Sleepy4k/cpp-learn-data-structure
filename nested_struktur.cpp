@@ -57,4 +57,6 @@ int main() {
   cout << "Nama kampus Mahasiswa : " << naka.kampus.nama << endl;
   cout << "Alamat kampus Mahasiswa : " << naka.kampus.alamat << endl;
   cout << "Tahun berdiri kampus Mahasiswa : " << naka.kampus.tahun_berdiri << endl;
+
+  return 0;
 }

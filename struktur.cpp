@@ -76,4 +76,6 @@ int main() {
 
   cout << "Nama Siswa 1 : " << mhs2.nama << endl;
   cout << "Umur Siswa 1 : " << mhs2.umur << endl;
+
+  return 0;
 }
