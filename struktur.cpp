@@ -69,6 +69,8 @@ int main() {
   cout << "Jurusan Mahasiswa 2 : " << mhs2.jurusan << endl;
   cout << "Umur Mahasiswa 2 : " << mhs2.umur << endl;
 
+  // Untuk metode traditional kita dapat memasukan value pada tiap tiap data
+  // cara ini terbilang lebih aman namun memakan waktu yang lebih lama
   Siswa siswa1;
 
   siswa1.nama = "Munaroh";
@@ -77,3 +79,4 @@ int main() {
   cout << "Nama Siswa 1 : " << mhs2.nama << endl;
   cout << "Umur Siswa 1 : " << mhs2.umur << endl;
 }
+

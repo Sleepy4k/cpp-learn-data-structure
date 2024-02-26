@@ -27,7 +27,7 @@ int main() {
    */
 
   Siswa siswa[2];
-
+ 
   siswa[0] = {"Abdul", 20, {"Makan", "Mancing", "Tidur"}};
   siswa[1] = {"Iqbal", 23, {"Renang", "Mendaki", "Tidur"}};
 
@@ -45,5 +45,5 @@ int main() {
 
     cout << endl;
   }
-  
 }
+
