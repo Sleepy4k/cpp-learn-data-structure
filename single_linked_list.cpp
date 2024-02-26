@@ -28,11 +28,17 @@ int main() {
   node2 = new Buku();
   node3 = new Buku();
 
+  cout << "Menambahkan data ke dalam node 1" << endl;
+
   // Pengisian data dari node 1
   node1->judul = "Matematika";
   node1->pengarang = "Ahli Matematika";
   node1->tahunterbit = 1995;
   node1->next = node2;
+
+  cout << "Data berhasil ditambahkan ke dalam node 1" << endl;
+
+  cout << "Menambahkan data ke dalam node 2" << endl;
 
   // Pengisian data dari node 2
   node2->judul = "Kakaku";
@@ -40,11 +46,19 @@ int main() {
   node2->tahunterbit = 2005;
   node2->next = node3;
 
+  cout << "Data berhasil ditambahkan ke dalam node 2" << endl;
+
+  cout << "Menambahkan data ke dalam node 3" << endl;
+
   // Pengisian data dari node 3
   node3->judul = "Dia";
   node3->pengarang = "Aku";
   node3->tahunterbit = 2020;
   node3->next = NULL;
+
+  cout << "Data berhasil ditambahkan ke dalam node 3" << endl;
+
+  cout << "Menampilkan data dari single linked list" << endl;
 
   // Menampilkan data dari single linked list
   Buku *data;
@@ -58,4 +72,8 @@ int main() {
 
     data = data->next;
   }
+
+  cout << "Semua data berhasil ditampilkan" << endl;
+
+  return 0;
 }
